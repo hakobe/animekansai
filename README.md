@@ -1,6 +1,9 @@
 # Anime Kansai
 アニメの放送を10分前に通知するTwitterボットです。
 
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/hakobe/animekansai)
+
+
 ## 使い方
 AnimeKansaiを利用するためには以下の準備が必要です。
 
