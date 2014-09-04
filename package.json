@@ -1,0 +1,14 @@
+{
+  "name": "animekansai",
+  "private": true,
+  "version": "0.0.0",
+  "description": "tweet anime infor in KANSAI regions",
+  "main": "animekansai.coffee",
+  "author": "hakobe",
+  "license": "MIT",
+  "dependencies": {
+    "coffee-script": "^1.8.0",
+    "feedparser": "^0.19.2",
+    "q": "^1.0.1"
+  }
+}
