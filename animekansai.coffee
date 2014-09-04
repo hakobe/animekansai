@@ -2,11 +2,11 @@ Q = require 'q'
 request = require 'request'
 FeedParser = require 'feedparser'
 
-SYOBOCAL_ID     = process.env['AK_SYOBOCAL_ID']
-CONSUMER_KEY    = process.env['AK_CONSUMER_KEY']
-CONSUMER_SECRET = process.env['AK_CONSUMER_SECRET']
-TOKEN           = process.env['AK_TOKEN']
-TOKEN_SECRET    = process.env['AK_TOKEN_SECRET']
+SYOBOCAL_ID  = process.env['AK_SYOBOCAL_ID']
+API_KEY      = process.env['AK_API_KEY']
+API_SECRET   = process.env['AK_API_SECRET']
+TOKEN        = process.env['AK_TOKEN']
+TOKEN_SECRET = process.env['AK_TOKEN_SECRET']
 
 fetchPrograms = ->
   req = request
@@ -38,8 +38,8 @@ tweet = (message) ->
     method: 'POST'
     url:    'https://api.twitter.com/1.1/statuses/update.json'
     oauth:
-      consumer_key:    CONSUMER_KEY
-      consumer_secret: CONSUMER_SECRET
+      consumer_key:    API_KEY
+      consumer_secret: API_SECRET
       token:           TOKEN
       token_secret:    TOKEN_SECRET
     form:
