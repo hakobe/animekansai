@@ -20,8 +20,8 @@ AnimeKansaiを起動するために必要な環境変数一覧です。
 - `AK_SYOBOCAL_ID` しょぼいカレンダーのユーザアカウント
 - `AK_API_KEY` TwitterアプリケーションのAPI Key
 - `AK_API_SECRET` TwitterアプリケーションのAPI Secret
-- `AK_TOKEN` Twitterのアプリケーションごとに作られるAPI Key
-- `AK_TOKEN_SECRET` Twitterのアプリケーションごとに作られるAPI Secret
+- `AK_TOKEN` tweetするユーザの access token
+- `AK_TOKEN_SECRET` tweetするユーザの access token secret
 
 ## 動いているアカウント
 

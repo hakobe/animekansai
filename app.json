@@ -1,0 +1,23 @@
+{
+  "name": "AnimeKansai",
+  "description": "アニメの放送を10分前に通知するTwitterボットです。",
+  "repository": "https://github.com/hakobe/animekansai",
+  "keywords": ["node", "twitter", "anime"],
+  "env": {
+    "AK_SYOBOCAL_ID" : {
+      "description": "しょぼいカレンダーのユーザアカウント"
+    },
+    "AK_API_KEY" : {
+      "description": "TwitterアプリケーションのAPI Key"
+    },
+    "AK_API_SECRET" : {
+      "description": "TwitterアプリケーションのAPI Secret"
+    },
+    "AK_TOKEN" : {
+      "description": "tweetするユーザの access token"
+    },
+    "AK_TOKEN_SECRET" : {
+      "description": "tweetするユーザの access token secret"
+    }
+  }
+}
