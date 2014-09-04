@@ -45,10 +45,8 @@ tweet = (message) ->
     form:
       status: message
     (error, request, body) ->
-      console.log('hey')
       if error
         console.log('error: ' + error)
-
 
 lookAround = ->
   fetchPrograms().then () ->
