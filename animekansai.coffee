@@ -51,8 +51,8 @@ tweet = (message) ->
 
 
 lookAround = ->
-  fetchPrograms().then (data) ->
-    console.log('finished')
+  fetchPrograms().then () ->
+    console.log('tweeted')
   .progress (article) ->
     if isIn10Minutes(article.date)
       formattedTitle = article.title.replace(/^\s?\d\d\/\d\d\s/, '')
@@ -62,6 +62,7 @@ lookAround = ->
     console.log('error: ' + error)
 
 start = ->
+  console.log('started Anime Kansai for syobocal id:' + SYOBOCAL_ID)
   setInterval ->
     minute = new Date().getMinutes()
     console.log(minute)
