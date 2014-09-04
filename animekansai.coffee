@@ -63,7 +63,6 @@ start = ->
   console.log('started Anime Kansai for syobocal id:' + SYOBOCAL_ID)
   setInterval ->
     minute = new Date().getMinutes()
-    console.log(minute)
     if minute in [0, 10, 20, 30, 40, 50]
       lookAround()
   , 60 * 1000
