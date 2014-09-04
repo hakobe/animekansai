@@ -29,9 +29,13 @@ fetchPrograms = ->
 
   deferred.promise
 
+truncateToMinutes = (date) ->
+  new Date( Math.floor(date.getTime() / (60 * 1000)) * (60 * 1000) )
+
 isIn10Minutes = (date) ->
-  after10Minutes = new Date().getTime() + 10 * 60 * 1000
-  date.getTime() < after10Minutes
+  now = truncateToMinutes(new Date()).getTime()
+  after10Minutes = now + 10 * 60 * 1000
+  now < date.getTime() && date.getTime() <= after10Minutes
 
 tweet = (message) ->
   request
