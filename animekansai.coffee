@@ -49,7 +49,7 @@ tweet = (message) ->
     form:
       status: message
     (error, response, body) ->
-      if response.statusCode in [200, 201]
+      if not (response.statusCode in [200, 201])
         console.log(body)
 
 lookAround = ->
