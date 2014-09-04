@@ -48,9 +48,9 @@ tweet = (message) ->
       token_secret:    TOKEN_SECRET
     form:
       status: message
-    (error, request, body) ->
-      if error
-        console.log('error: ' + error)
+    (error, response, body) ->
+      if response.statusCode in [200, 201]
+        console.log(body)
 
 lookAround = ->
   fetchPrograms().then () ->
