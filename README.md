@@ -1,10 +1,12 @@
 # Anime Kansai
 アニメの放送を10分前に通知するTwitterボットです。
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/hakobe/animekansai)
-
+10分に一度[しょぼいカレンダー](http://cal.syoboi.jp/)
+をチェックし、10分以内に放送されるアニメのタイトルをtweetします。
 
 ## 使い方
+
+### 準備
 AnimeKansaiを利用するためには以下の準備が必要です。
 
 1. アニメの放送情報をtweetするTwitterアカウント
@@ -12,9 +14,6 @@ AnimeKansaiを利用するためには以下の準備が必要です。
 3. 2のアプリケーションが1のアカウントでtweetするための access token
 4. アニメの放送情報源になる[しょぼいカレンダー](http://cal.syoboi.jp/)のアカウント
   - http://cal.syoboi.jp/uc からチャンネル設定をしておくと良いでしょう
-
-1~4の情報を環境変数にセットして起動すると、10分に一度[しょぼいカレンダー](http://cal.syoboi.jp/)
-をチェックし、10分以内に放送されるアニメのタイトルをtweetします。
 
 ### 環境変数一覧
 
@@ -25,6 +24,28 @@ AnimeKansaiを起動するために必要な環境変数一覧です。
 - `AK_API_SECRET` TwitterアプリケーションのAPI Secret
 - `AK_TOKEN` tweetするユーザの access token
 - `AK_TOKEN_SECRET` tweetするユーザの access token secret
+
+### 起動
+
+```
+$ npm install
+$ $(npm bin)/coffee animekansai.coffee
+```
+
+### デプロイ
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/hakobe/animekansai)
+
+ボタンを押してDeploy!
+
+そのままでは動作しないので、以下のように起動しましょう。(animekansaiというアプリ名を使っている場合)
+
+```
+$ heroku git:clone -a animekansai
+$ cd animekansai
+$ heroku scale bot=1
+```
+
 
 ## 動いているアカウント
 
