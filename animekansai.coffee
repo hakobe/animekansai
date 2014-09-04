@@ -8,13 +8,6 @@ CONSUMER_SECRET = process.env['AK_CONSUMER_SECRET']
 TOKEN           = process.env['AK_TOKEN']
 TOKEN_SECRET    = process.env['AK_TOKEN_SECRET']
 
-console.log(
-  CONSUMER_KEY,
-  CONSUMER_SECRET,
-  TOKEN,
-  TOKEN_SECRET
-);
-
 fetchPrograms = ->
   req = request
     url: 'http://cal.syoboi.jp/rss.php'
