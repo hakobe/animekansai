@@ -57,7 +57,7 @@ lookAround = ->
     console.log('tweeted')
   .progress (article) ->
     if isIn10Minutes(article.date)
-      formattedTitle = article.title.replace(/\s?\d\d\/\d\d\s(\d\d:\d\d) ~$/, '$1 ~')
+      formattedTitle = article.title.replace(/\s?\d\d\/\d\d\s(\d\d:\d\d) ~$/, ' $1 ~')
       console.log(formattedTitle)
       tweet(formattedTitle)
   .fail (error) ->
