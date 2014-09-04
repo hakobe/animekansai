@@ -14,7 +14,7 @@ fetchPrograms = ->
     qs:
       filter:   '0'
       usr:      SYOBOCAL_ID
-      titlefmt: '$(Mark) $(StTime) [$(ChName)] $(Title) $(SubTitleB)'
+      titlefmt: '$(Mark) [$(ChName)] $(Title) $(SubTitleB) $(StTime) ~'
       
   feedparser = new FeedParser()
   req.pipe(feedparser)
@@ -57,7 +57,7 @@ lookAround = ->
     console.log('tweeted')
   .progress (article) ->
     if isIn10Minutes(article.date)
-      formattedTitle = article.title.replace(/^\s?\d\d\/\d\d\s/, '')
+      formattedTitle = article.title.replace(/\s?\d\d\/\d\d\s(\d\d:\d\d) ~$/, '$1 ~')
       console.log(formattedTitle)
       tweet(formattedTitle)
   .fail (error) ->
