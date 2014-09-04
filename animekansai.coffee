@@ -1,6 +1,7 @@
 Q = require 'q'
 request = require 'request'
 FeedParser = require 'feedparser'
+Twitter = require 'twitter'
 
 SYOBOCAL_ID  = process.env['AK_SYOBOCAL_ID']
 API_KEY      = process.env['AK_API_KEY']
@@ -37,24 +38,20 @@ isIn10Minutes = (date) ->
   after10Minutes = now + 10 * 60 * 1000
   now < date.getTime() && date.getTime() <= after10Minutes
 
+twitter = new Twitter
+  consumer_key:        API_KEY
+  consumer_secret:     API_SECRET
+  access_token_key:    TOKEN
+  access_token_secret: TOKEN_SECRET
+
 tweet = (message) ->
-  request
-    method: 'POST'
-    url:    'https://api.twitter.com/1.1/statuses/update.json'
-    oauth:
-      consumer_key:    API_KEY
-      consumer_secret: API_SECRET
-      token:           TOKEN
-      token_secret:    TOKEN_SECRET
-    form:
-      status: message
-    (error, response, body) ->
-      if not (response.statusCode in [200, 201])
-        console.log(body)
+  twitter.updateStatus message, (res) ->
+    if res instanceof Error
+      console.log(res)
 
 lookAround = ->
   fetchPrograms().then () ->
-    console.log('tweeted')
+    console.log('I worked hard.')
   .progress (article) ->
     if isIn10Minutes(article.date)
       formattedTitle = article.title.replace(/\s?\d\d\/\d\d\s(\d\d:\d\d) ~$/, ' $1 ~')
