@@ -1,1 +1,1 @@
-web: coffee animekansai.coffee
+bot: coffee animekansai.coffee
