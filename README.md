@@ -9,15 +9,16 @@
 ## 使い方
 
 ### 準備
+
 AnimeKansaiを利用するためには以下の準備が必要です。
 
 1. アニメの放送情報をtweetするTwitterアカウント
 2. https://dev.twitter.com/ から登録できるTwitterアプリケーション
-3. 2のアプリケーションが1のアカウントでtweetするための access token
+3. 2のアプリケーションが1のアカウントでtweetするための token
 4. アニメの放送情報源になる[しょぼいカレンダー](http://cal.syoboi.jp/)のアカウント
-  - http://cal.syoboi.jp/uc からチャンネル設定をしておくと良いでしょう
+  - http://cal.syoboi.jp/uc からチャンネル設定をすることでどの地方のアニメ放送情報に基づくかを選べます
 
-### 環境変数一覧
+### 環境変数
 
 AnimeKansaiを起動するために必要な環境変数一覧です。
 
@@ -38,10 +39,10 @@ $ $(npm bin)/coffee animekansai.coffee
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/hakobe/animekansai)
 
-そのままでは動作しないので、以下のように起動しましょう。(animekansaiというアプリ名を使っている場合)
+このボタンを使ってHerokuにデプロイできます。そのままでは起動しないので、以下のようにしましょう。
 
 ```
-$ heroku git:clone -a animekansai
+$ heroku git:clone -a animekansai # animekansai というheroku app名の場合
 $ cd animekansai
 $ heroku scale bot=1
 ```
