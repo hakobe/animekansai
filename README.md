@@ -4,6 +4,8 @@
 10分に一度[しょぼいカレンダー](http://cal.syoboi.jp/)
 をチェックし、10分以内に放送されるアニメのタイトルをtweetします。
 
+設定を変更すれば、関西以外のアニメ情報もtweetできます。
+
 ## 使い方
 
 ### 準備
@@ -32,11 +34,9 @@ $ npm install
 $ $(npm bin)/coffee animekansai.coffee
 ```
 
-### デプロイ
+### Herokuを使う
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/hakobe/animekansai)
-
-ボタンを押してDeploy!
 
 そのままでは動作しないので、以下のように起動しましょう。(animekansaiというアプリ名を使っている場合)
 
